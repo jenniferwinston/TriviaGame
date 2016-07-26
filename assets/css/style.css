@@ -5,7 +5,11 @@ body {
 .jumbotron {	
 	background-image: url(../images/background.jpg);
 	background-size: cover;
-	height: 700px;
+	height: 800px;
 	font-family: 'Luckiest Guy', cursive;
 
+}
+
+img {
+	height: 100px;
 }

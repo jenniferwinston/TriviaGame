@@ -9,37 +9,35 @@ Show Results
 
 */
 $( document ).ready(function() {
-});
 
-function triviaQuestions (question, choices, correctAnswer){
-	this.question = question;
-	this.choices = choices;
-	this.correctAnswer = correctAnswer;
-}
 
 
 var	questions= [
-	new triviaQuestions("What type of Fish is Nemo?",
-	["Tetra fish", "Clown fish", "Goldfish", "Beta fish"],
-	2), //index
+	{question:"What type of Fish is Nemo?",
+	answers:["Tetra fish", "Clown fish", "Goldfish", "Beta fish"],
+	correctAnswer: "Clown fish"},
 
-	new triviaQuestions("What is the name of the girl at the dentist with braces?",
-	["Barbara", "Sydney", "Flo", "Darla"],
-	4), 
+	{question:"What is the name of the girl at the dentist with braces?",
+	answers:["Barbara", "Sydney", "Flo", "Darla"],
+	correctAnswer: "Darla"}, 
 
-	new triviaQuestions("What language does Dory claim to speak?",
-	["Shark", "Clam", "Whale", "Turtle"],
-	3),
+	{question:"What language does Dory claim to speak?",
+	answer: ["Shark", "Clam", "Whale", "Turtle"],
+	correctAnswer: "Whale"},
 
-	new triviaQuestions ("What is the address on the diver mask",
-	["242 Wallaby Way, Sydney", "422 Worldly Way, Sidney", "24 Wallworld Way, Syndey", "42 Wallaby Way, Sidney"],
-	4),
+	{question: "What is the address on the diver mask",
+	answer:["242 Wallaby Way, Sydney", "422 Worldly Way, Sidney", "24 Wallworld Way, Syndey", "42 Wallaby Way, Sidney"],
+	correctAnswer: "42 Wallaby Way, Sidney"},
 
-	new triviaQuestions ("What is the sharks chant at their meeting",
-	["Just keep swimming", "Fish are friends not food", "Fish are food not friends", "Food is the fish for dinner"],
-	2), 
+	{question: "What is the sharks chant at their meeting",
+	answer: ["Just keep swimming", "Fish are friends not food", "Fish are food not friends", "Food is the fish for dinner"],
+	correctAnswer: "Fish are friends not food"} 
 ];	
 
+
+for (var i =0; i < questions.length; i++) {
+	question.append('<h2>' + questions[i].question + '</h2>');
+}
 
 
 //Starts timer on click
@@ -75,7 +73,7 @@ $("#startClock").click(function(){
 // Display next question on next click
 
 
-
+}); //doc on ready
 
 
 
