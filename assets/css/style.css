@@ -1,0 +1,11 @@
+body {
+	text-align: center;
+	font-family: 'Luckiest Guy', cursive;
+}
+.jumbotron {	
+	background-image: url(../images/background.jpg);
+	background-size: cover;
+	height: 700px;
+	font-family: 'Luckiest Guy', cursive;
+
+}
