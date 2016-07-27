@@ -22,22 +22,34 @@ var	questions= [
 	correctAnswer: "Darla"}, 
 
 	{question:"What language does Dory claim to speak?",
-	answer: ["Shark", "Clam", "Whale", "Turtle"],
+	answers: ["Shark", "Clam", "Whale", "Turtle"],
 	correctAnswer: "Whale"},
 
 	{question: "What is the address on the diver mask",
-	answer:["242 Wallaby Way, Sydney", "422 Worldly Way, Sidney", "24 Wallworld Way, Syndey", "42 Wallaby Way, Sidney"],
+	answers:["242 Wallaby Way, Sydney", "422 Worldly Way, Sidney", "24 Wallworld Way, Syndey", "42 Wallaby Way, Sidney"],
 	correctAnswer: "42 Wallaby Way, Sidney"},
 
 	{question: "What is the sharks chant at their meeting",
-	answer: ["Just keep swimming", "Fish are friends not food", "Fish are food not friends", "Food is the fish for dinner"],
+	answers: ["Just keep swimming", "Fish are friends not food", "Fish are food not friends", "Food is the fish for dinner"],
 	correctAnswer: "Fish are friends not food"} 
 ];	
 
 
-for (var i =0; i < questions.length; i++) {
-	question.append('<h2>' + questions[i].question + '</h2>');
-}
+var correctGuesses = 0;
+
+
+
+function startGame() {
+
+	for (var i =0; i < questions.length; i++) {
+		$('#question').append('<h3>' + questions[i].question + '</h3>');
+	}
+	for ( j= 0; j < questions[i].answers.length; j++) {
+		$('#answer').append('<h4>' + questions[i].answers + '</h4>');
+	}
+
+}; //start game
+
 
 
 //Starts timer on click
@@ -58,19 +70,22 @@ function startTimer(){
 }
 
 
+function showResult() {
+	console.log("result");
+
+}
+
+
 $("#startClock").click(function(){
+    startGame();
     startTimer();
  });
 
 
-
-// First question displays on click
-
-
-// Records chosen answer
-
-
-// Display next question on next click
+//sumbit results
+$("#submitResult").click(function(){
+    showResult();
+ });
 
 
 }); //doc on ready
