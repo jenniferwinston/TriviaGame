@@ -8,6 +8,10 @@ Check Answers
 Show Results
 
 */
+// hides end game text & button
+$(document).ready(function(){
+	$(".endGame").hide();
+	$("#submitResult").hide();
 
 
 var	questions= [
@@ -32,16 +36,18 @@ var	questions= [
 	correctAnswer: "Fish are friends not food"} 
 ];	
 
-var currentQuestion = 0;
+// global variables
 var correctAnswers = 0;
+var incorrectAnswers =0;
+var timer ;
 
-
+// start object
 var startGame = {
 
 	viewQuestions: function() {
 
 		for (var i=0; i < questions.length; i++) {
-			var question = $("<div id='q'"+ i + ">");
+			var question = $("<div id='q"+ i + "' class='spacing'>");
 			question.html(questions[i].question);
 			question.attr("questions-id", i);
 			$('#question').append(question);
@@ -49,57 +55,70 @@ var startGame = {
 			for (ctr = 0; ctr < questions[i].answers.length; ctr++) {
     		var answers = questions[i].answers[ctr];
     		console.log(answers);
-    		$('<input type="radio" name="answer" value="'+ questions[i].answers[ctr] + '"> '+ questions[i].answers[ctr] +'</input>').appendTo('#question');
-
-       		} //second for
-    	}  //first for
-	} //viewquestions
-} //start game
-
-	
-
-function startTimer(){
-  var counter = 60;
-  setInterval(function() {
-    counter--;
-    if (counter >= 0) {
-      span = document.getElementById("count");
-      span.innerHTML = counter;
-    }
-    if (counter === 0) {
-        alert('Time is Up!');
-        clearInterval(counter);
-    }
-  }, 1000);
-}
+    		$('#question').append('<input type="radio" name="question' + '-' + i + '" value="'+ questions[i].answers[ctr] + '"> '+ questions[i].answers[ctr] );
+       		}; //second for
+    	};  //first for
+	}, //viewquestions	
 
 
+	checkAnswers: function () {
+		console.log("checking the answers");
+		for (var i=0; i < questions.length; i++) {
+			var userAnswers = $("input[name='question-" + i +"']:checked");
+			if (userAnswers.val() == questions[i].correctAnswer) {
+				correctAnswers++;
+			} else {
+				incorrectAnswers++;
+			}
+		} 
+			startGame.results();
+	}, //check answers
 
+
+	results: function(){
+		clearInterval(timer);	
+		$("#question").hide();
+		$("#submitResult").hide();
+		$("#startClock").hide();
+		$(".timeLeft").hide();
+		$(".endGame").show();
+		$('#correctGuesses').append(correctAnswers);
+	}, // reset
+
+
+
+	startTimer: function(){
+	  var counter = 60;
+	  timer= setInterval(function() {
+	    counter--;
+	    if (counter >= 0) {
+	      span = document.getElementById("count");
+	      span.innerHTML = counter;
+	    }
+	    if (counter === 0) {
+	        alert('Time is Up!');
+	        clearInterval(timer);
+	    }
+	  }, 1000);
+	}, //start timer 
+
+}; //start game
+
+
+// onlicks
 $("#startClock").click(function(){
-    
-    // startTimer();
+    startGame.startTimer();
     startGame.viewQuestions();
+    $("#startClock").hide();
+    $("#submitResult").show();
  });
-
-
-function reset(){
-	$("#question").hide();
-	$("#submitResult").hide();
-	$("#startClock").hide();
-}
 
 $("#submitResult").click(function(){
-    reset();
+    startGame.checkAnswers();
  });
 
 
-//getting the answers back
-
-/* $.each($(#input[name=""]:
- "checked"), function(){
-})
-*/
-
+});	//document ready
 
 
 

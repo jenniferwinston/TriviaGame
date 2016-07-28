@@ -1,6 +1,6 @@
 
 body {
-	background: url(../images/shark.jpg) no-repeat;
+	background: url("../images/shark.jpg") no-repeat;
 	background-size: 100%;
 }
 
@@ -12,13 +12,16 @@ body {
 	font-family: 'Luckiest Guy', cursive;
 	text-shadow: 5px 5px 5px #000; 
 }
+
+
+
 p {
 	font-size: 90px;
 }
 button {
 	text-shadow: 3px 3px 3px #000; 
 }
-#q {
+.spacing {
 	margin-top: 25px;
 }
 
