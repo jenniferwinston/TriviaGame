@@ -8,8 +8,6 @@ Check Answers
 Show Results
 
 */
-$( document ).ready(function() {
-
 
 
 var	questions= [
@@ -25,34 +23,48 @@ var	questions= [
 	answers: ["Shark", "Clam", "Whale", "Turtle"],
 	correctAnswer: "Whale"},
 
-	{question: "What is the address on the diver mask",
+	{question: "What is the address on the diver mask?",
 	answers:["242 Wallaby Way, Sydney", "422 Worldly Way, Sidney", "24 Wallworld Way, Syndey", "42 Wallaby Way, Sidney"],
 	correctAnswer: "42 Wallaby Way, Sidney"},
 
-	{question: "What is the sharks chant at their meeting",
+	{question: "What is the sharks chant at their meeting?",
 	answers: ["Just keep swimming", "Fish are friends not food", "Fish are food not friends", "Food is the fish for dinner"],
 	correctAnswer: "Fish are friends not food"} 
 ];	
 
-
-var correctGuesses = 0;
-
-
-
-function startGame() {
-
-	for (var i =0; i < questions.length; i++) {
-		$('#question').append('<h3>' + questions[i].question + '</h3>');
-	}
-	for ( j= 0; j < questions[i].answers.length; j++) {
-		$('#answer').append('<h4>' + questions[i].answers + '</h4>');
-	}
-
-}; //start game
+var currentQuestion = 0;
+var correctAnswers = 0;
 
 
+var startGame = {
 
-//Starts timer on click
+	viewQuestions: function() {
+
+		for (var i=0; i < questions.length; i++) {
+			var question = $("<div>");
+			question.html(questions[i].question);
+			question.attr("questions-id", i);
+			$('#question').append(question);
+
+			for (ctr = 0; ctr < questions[i].answers.length; ctr++) {
+    		console.log(ctr);
+       		}
+    	}
+    
+		
+    	
+        // $('<li><input type="radio" ' + i + answers + '</li>').appendTo(answers);
+    	
+
+
+	} //viewquestions
+} //start game
+
+function reset(){
+	currentQuestion = 0;
+	correctAnswers = 0;
+}
+
 
 function startTimer(){
   var counter = 60;
@@ -70,25 +82,22 @@ function startTimer(){
 }
 
 
-function showResult() {
-	console.log("result");
-
-}
 
 
 $("#startClock").click(function(){
-    startGame();
-    startTimer();
+    
+    // startTimer();
+    startGame.viewQuestions();
  });
 
 
-//sumbit results
-$("#submitResult").click(function(){
-    showResult();
- });
+
+// $("#submitResult").click(function(){
+//     showResult();
+//  });
 
 
-}); //doc on ready
+
 
 
 

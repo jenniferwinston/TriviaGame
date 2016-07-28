@@ -1,15 +1,21 @@
+
 body {
+	background: url(../images/shark.jpg) no-repeat;
+	background-size: 100%;
+}
+
+.container {
+	padding-top: 58px;	
 	text-align: center;
-	font-family: 'Luckiest Guy', cursive;
-}
-.jumbotron {	
-	background-image: url(../images/background.jpg);
 	background-size: cover;
-	height: 800px;
+	color: white;
 	font-family: 'Luckiest Guy', cursive;
-
+	text-shadow: 5px 5px 5px #000; 
+}
+p {
+	font-size: 90px;
+}
+button {
+	text-shadow: 3px 3px 3px #000; 
 }
 
-img {
-	height: 100px;
-}
