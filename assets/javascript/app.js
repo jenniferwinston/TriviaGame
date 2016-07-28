@@ -97,7 +97,9 @@ var startGame = {
 	    }
 	    if (counter === 0) {
 	        alert('Time is Up!');
+	        startGame.results();
 	        clearInterval(timer);
+
 	    }
 	  }, 1000);
 	}, //start timer 

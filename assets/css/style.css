@@ -1,27 +1,44 @@
 
+
 body {
-	background: url("../images/shark.jpg") no-repeat;
-	background-size: 100%;
+    background-image: url("../images/shark.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    
 }
 
 .container {
-	padding-top: 58px;	
 	text-align: center;
-	background-size: cover;
-	color: white;
-	font-family: 'Luckiest Guy', cursive;
-	text-shadow: 5px 5px 5px #000; 
+	color: #FF642A;
+	font-family: 'Montserrat', sans-serif;
+	text-shadow: 1px 1px 1px #000; 
+
+}
+
+.spacing {
+	padding: 5px;
+}
+
+.trans {
+	background:#7f7f7f;
+  	background:rgba(0,0,0,0.5);
+  	border-radius: 50px;
+
 }
 
 
-
 p {
-	font-size: 90px;
+	padding-top: 50px;
+	font-size: 80px;
+	font-family: 'Luckiest Guy', cursive;
+	color: white;
 }
 button {
 	text-shadow: 3px 3px 3px #000; 
 }
 .spacing {
-	margin-top: 25px;
+	margin: 25px 100px 0px 100px;
 }
 

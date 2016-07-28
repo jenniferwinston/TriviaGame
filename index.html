@@ -11,20 +11,25 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
 </head>
 <body>
 
 <div class="container">
+	<div class="spacing">
 
 	<p>Finding Nemo Trivia</p>
+	<!--Timer countdown-->
+<div class="trans">	
+	<div class="timeLeft"> <h3><span id="count">60</span> seconds left</h3></div>
+	<br>
 	
 		<h3 id="question"></h3>
 		<h3 id="resultView"></h3>
 		<h3 id="answers"></h3>
 	
-	<!--Timer countdown-->
-	<div class="timeLeft"> <h3><span id="count">60</span> seconds left</h3></div>
-	<br>
+	
 	<!--Buttons-->
 	<button type="button" id="startClock" class="btn btn-primary btn-lg gameStart">Start Game</button>
 
@@ -34,13 +39,15 @@
 	<!--End Game-->
 	<div class="endGame">
 	<h2> Your Results:</h2>
-	<h3 id="correctGuesses">Correctly Answered: </h3>
-	<h3>Out of 5 Questions!</h3>
+	<h2 id="correctGuesses">Correctly Answered: </h2>
+	<h2>Out of 5 Questions!</h2>
 	</div>
 	
 	
-
+	</div>
+</div>	
 </div> <!--containter-->
+
 
 
 <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
