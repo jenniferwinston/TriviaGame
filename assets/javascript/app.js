@@ -41,30 +41,22 @@ var startGame = {
 	viewQuestions: function() {
 
 		for (var i=0; i < questions.length; i++) {
-			var question = $("<div>");
+			var question = $("<div id='q'"+ i + ">");
 			question.html(questions[i].question);
 			question.attr("questions-id", i);
 			$('#question').append(question);
 
 			for (ctr = 0; ctr < questions[i].answers.length; ctr++) {
-    		console.log(ctr);
-       		}
-    	}
-    
-		
-    	
-        // $('<li><input type="radio" ' + i + answers + '</li>').appendTo(answers);
-    	
+    		var answers = questions[i].answers[ctr];
+    		console.log(answers);
+    		$('<input type="radio" name="answer" value="'+ questions[i].answers[ctr] + '"> '+ questions[i].answers[ctr] +'</input>').appendTo('#question');
 
-
+       		} //second for
+    	}  //first for
 	} //viewquestions
 } //start game
 
-function reset(){
-	currentQuestion = 0;
-	correctAnswers = 0;
-}
-
+	
 
 function startTimer(){
   var counter = 60;
@@ -83,7 +75,6 @@ function startTimer(){
 
 
 
-
 $("#startClock").click(function(){
     
     // startTimer();
@@ -91,14 +82,23 @@ $("#startClock").click(function(){
  });
 
 
+function reset(){
+	$("#question").hide();
+	$("#submitResult").hide();
+	$("#startClock").hide();
+}
 
-// $("#submitResult").click(function(){
-//     showResult();
-//  });
+$("#submitResult").click(function(){
+    reset();
+ });
 
 
+//getting the answers back
 
-
+/* $.each($(#input[name=""]:
+ "checked"), function(){
+})
+*/
 
 
 
